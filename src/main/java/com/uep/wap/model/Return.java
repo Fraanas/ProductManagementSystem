@@ -21,6 +21,10 @@ public class Return{
     @Temporal(TemporalType.TIMESTAMP)
     private Date returnDate;
 
+    //OneToOne relationship with Order
+    @OneToOne(mappedBy = "orderReturn", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Order orders;
+
     public enum ReturnStatus {
         RECEIVED, AUTHORIZED, REFUND, CLOSED
     }
