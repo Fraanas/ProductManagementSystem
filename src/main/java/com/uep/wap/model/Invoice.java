@@ -4,10 +4,12 @@ import java.util.Date;
 
 
 @Entity
-@Table(name = "Invoice")
+@Table()
 public class Invoice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long invoiceId;
+
     private String invoiceNumber;
 
     //ManyToOne relationship with Order
@@ -27,7 +29,14 @@ public class Invoice {
     @Column(columnDefinition = "DECIMAL(10,2) DEFAULT 0.00")
     private double price;
 
-    //gettery i settery
+    public long getInvoiceId() {
+        return invoiceId;
+    }
+
+    public void setInvoiceId(long invoiceId) {
+        this.invoiceId = invoiceId;
+    }
+
     public String getInvoiceNumber() {
         return invoiceNumber;
     }
@@ -68,7 +77,6 @@ public class Invoice {
         this.price = price;
     }
 }
-
 
 
 
