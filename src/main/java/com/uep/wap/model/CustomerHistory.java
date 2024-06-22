@@ -24,7 +24,6 @@ public class CustomerHistory {
             inverseJoinColumns = @JoinColumn(name = "order_id")
     )
     private List<Order> orders = new ArrayList<>();
-
     //ManyToMany relationship with Product
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(

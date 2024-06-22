@@ -39,7 +39,7 @@ public class Order {
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private Logistics shipment;
 
-
+    //OneToOne relationship with orderReturn
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     private Return orderReturn;
 
